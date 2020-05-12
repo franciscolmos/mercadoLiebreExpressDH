@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('partials/head')%>
+<body>
+	<!-- Header -->
+	<%- include('partials/header')%>
+	<!-- /Header -->
+	
+	<!-- Banner -->
+	<div class="banner"></div>
+	<!-- /Banner -->
+
+	<!-- Ofertas -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Ofertas</h2>
+			</div>
+			<% productosInSaleConImage.forEach(producto => { %>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href=product/detail/<%- producto.id %>/<%- producto.category %> >
+							<figure class="product-box_image">
+								<img src=<%- producto.image %> alt="imagen de producto">
+							</figure>
+							<article class="product-box_data">
+								<h2>$<%- producto.price %></h2>
+								<span><%- producto.discount %>% OFF</span>
+								<p><%- producto.description %></p>
+								<i class="fas fa-truck"></i>
+							</article>
+						</a>
+					</section>
+				</div>
+			<% })%>
+		</div>
+	</div>
+	<!-- /Ofertas -->
+
+	<!-- ultima visita -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Basado en tu última visita</h2>
+			</div>
+			<% productosVisitedConImage.forEach(producto => { %>
+
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href=product/detail/<%- producto.id %>/<%- producto.category %> >
+							<figure class="product-box_image">
+								<img src=<%- producto.image%> alt="imagen de producto">
+							</figure>
+							<article class="product-box_data">
+								<h2>$<%- producto.price%></h2>
+								<span><%- producto.discount%>% OFF</span>
+								<p><%- producto.description%></p>
+								<i class="fas fa-truck"></i>
+							</article>
+						</a>
+					</section>
+				</div>
+
+			<%}) %>
+			
+		</div>
+	</div>
+	<!-- /ultima visita -->
+	<!-- footer -->
+	<%- include('partials/footer')%>
+	<!-- /footer -->
+</body>
+</html>
