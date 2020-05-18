@@ -29,7 +29,7 @@ const productos = {
         })
         return listadoProductosListosFiltrados;
     },
-    productosConImages: function(category){
+    filterdeProductosWithImages: function(category){
         const productosListosFiltrados = this.productosFiltrados(category);
         const productosListosFiltradosConImagen = productosListosFiltrados.map((producto) =>{
             producto.image = 'images/products/' + producto.image;
@@ -37,13 +37,14 @@ const productos = {
         })
         return productosListosFiltradosConImagen;
     },
-    /*
-    routToDetail: function(category){
-        const productosListosFiltradosConImage = this.productosConImages(category);
-        console.log(productosListosFiltradosConImage.id)
-        return routeToDetail = 'localhost:3000/product/detail/' + productosListosFiltradosConImage.id + '/' + productosListosFiltradosConImage.category
-    }
-    */
+    allProductsWithImage: function(){
+        const productos = this.productosConDescuentosYSeparadorDeMiles();
+        const productosConImagen = productos.map((producto) =>{
+            producto.image = 'images/products/' + producto.image;
+            return producto;
+        })
+        return productosConImagen;
+    },
 }
 
 module.exports = productos;

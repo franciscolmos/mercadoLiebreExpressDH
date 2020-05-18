@@ -3,14 +3,10 @@ var router = express.Router();
 const products = require('../controllers/productos.js')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  /*
-  const routToDetail = products.routToDetail('in-sale');
-  console.log(routToDetail);
-  */  
+router.get('/', function(req, res, next) { 
   res.render('index', { title: 'Mercado Liebre Argentina', 
-                        productosInSaleConImage: products.productosConImages('in-sale'),
-                        productosVisitedConImage: products.productosConImages('visited')
+                        productosInSaleConImage: products.filterdeProductosWithImages('in-sale'),
+                        productosVisitedConImage: products.filterdeProductosWithImages('visited')
                         
                       });
 });

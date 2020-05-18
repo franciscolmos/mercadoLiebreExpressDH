@@ -19,13 +19,15 @@
 			<% productosInSaleConImage.forEach(producto => { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href=product/detail/<%- producto.id %>/<%- producto.category %> >
+						<a href=products/detail/<%- producto.id %>/<%- producto.category %> >
 							<figure class="product-box_image">
 								<img src=<%- producto.image %> alt="imagen de producto">
 							</figure>
 							<article class="product-box_data">
 								<h2>$<%- producto.price %></h2>
-								<span><%- producto.discount %>% OFF</span>
+								<% if(producto.discount > 0) {%>
+									<span><%- producto.discount %> % OFF</span>
+								<% } %>
 								<p><%- producto.description %></p>
 								<i class="fas fa-truck"></i>
 							</article>
@@ -47,13 +49,15 @@
 
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href=product/detail/<%- producto.id %>/<%- producto.category %> >
+						<a href=products/detail/<%- producto.id %>/<%- producto.category %> >
 							<figure class="product-box_image">
 								<img src=<%- producto.image%> alt="imagen de producto">
 							</figure>
 							<article class="product-box_data">
 								<h2>$<%- producto.price%></h2>
-								<span><%- producto.discount%>% OFF</span>
+								<% if(producto.discount > 0) {%>
+									<span><%- producto.discount %> % OFF</span>
+								<% } %>
 								<p><%- producto.description%></p>
 								<i class="fas fa-truck"></i>
 							</article>

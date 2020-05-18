@@ -1,7 +1,8 @@
-/* Fonts */
+/*====== Fonts ======*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 
-/* Variables */
+
+/*====== Variables ======*/
 :root {
   --yellow: #EAC926;
   --dark-blue: #03264C;
@@ -12,12 +13,14 @@
   --base-font-family: 'Roboto', sans-serif
 }
 
-/* Basics */
+
+/*====== Basics ======*/
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   min-height: 100vh;
   margin: 0;
   font-size: 10px;
@@ -29,7 +32,8 @@ body {
   background-color: var(--light-gray);
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -50,12 +54,18 @@ img {
   width: 100%;
 }
 
-input {
+input,
+textarea {
   font-family: inherit;
 }
 
+hr {
+  border: none;
+  border-bottom: solid 1px var(--light-gray);
+}
 
-/* Main Header */
+
+/*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
   background-color: var(--yellow);
@@ -99,7 +109,8 @@ input {
   cursor: pointer;
 }
 
-/* Main Navbar */
+
+/*====== Main Navbar ======*/
 .btn-toggle-navbar {
   background-color: var(--dark-blue);
   color: #ffffff;
@@ -128,7 +139,8 @@ input {
   border-bottom: solid 1px var(--gray);
 }
 
-/* Banner */
+
+/*====== Banner ======*/
 .banner {
   background-image: url(/images/img-home-banner.jpg);
   background-repeat: no-repeat;
@@ -137,7 +149,8 @@ input {
   height: 100px;
 }
 
-/* Products */
+
+/*====== Products ======*/
 .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -157,37 +170,12 @@ input {
   margin: 20px 0;
 }
 
-.detalleProducto{
-  width: 60%;
-  background-color: #ffffff;
-  border-radius: 5px;
-  overflow: hidden;
-  transition: 300ms;
-  margin: 30px -6px;
-  padding-right: 0%;
-}
-
-.detalleProducto a{
-  color:  #03264C;
-  text-decoration: none;
-}
-
-.fila{
-  margin-top: 35px;
-  background-color: white;
-}
-
 .product-box a {
   display: block;
 }
 
-
 .product-box_image {
   border-bottom: 1px solid var(--light-gray);
-}
-
-.imagenDetalle{
-  border-right: 1px solid var(--light-gray);
 }
 
 .product-box_data {
@@ -198,19 +186,9 @@ input {
   flex-wrap: wrap;
 }
 
-.product-box a{
-  text-decoration: none;
-}
-
 .product-box_data h2 {
   font-size: 2.4em;
   font-weight: 300;
-  margin: 0;
-}
-
-.product-box_data h1 {
-  font-size: 2.4em;
-  font-weight: bold;
   margin: 0;
 }
 
@@ -229,79 +207,6 @@ input {
   height: 0;
   transition: 300ms;
   overflow: hidden;
-}
-
-.infoProducto{
-  top: 0px;
-  right: 56px;
-  padding: 15px;
-  position: absolute;
-  align-items: center;
-  flex-wrap: wrap;
-  line-height: 3;
-}
-
-.originalPrice{
-  font-size: 20px;
-  color: var(--green);
-  font-weight: 400;
-  margin-bottom: 2px;
-}
-
-.buttonDetail{
-  height: 7vh;
-  width: 104%;
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-  border-radius: 4%;
-  border-style: none;
-  margin-top: 90px;
-}
-
-.infoProducto p{
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.tituloDetalle{
-  font-size: 26px;
-}
-
-.precioDetalle{
-  font-size: 60px
-}
-
-.product-box_data-detail p {
-  font-size: 2.5em;
-  width: 100%;
-  color: var(--gray);
-  margin: 0;
-  height: 0;
-  transition: 300ms;
-  overflow: hidden;
-  
-}
-
-.col-8{
-  background-color: white;
-}
-
-.pDetail{
-  padding: 0 5%;
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.pDetail1{
-  margin-top: 60px;
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.infoProducto p i {
-  color: var(--green);
-  margin-right: 20px;
 }
 
 .product-box_data i {
@@ -326,17 +231,18 @@ input {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.product-box:hover p{
+.product-box:hover p {
   height: 40px;
   margin-top: 15px;
 }
 
-.product-box:hover i{
+.product-box:hover i {
   transform: rotate(360deg);
   box-shadow: 0 0 5px var(--green);
 }
 
-/* Footer */
+
+/*====== Footer ======*/
 .main-footer {
   background-color: #ffffff;
   padding: 20px 0;
@@ -375,7 +281,135 @@ input {
   padding: 15px 0;
 }
 
-/* Media-Queries */
+
+/*====== Product Detail ======*/
+.product-detail {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-detail-img {
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+
+.product-detail-info {
+  border-left: 1px solid var(--light-gray);
+  padding: 15px;
+  height: 100%;
+}
+
+.product-detail-title {
+  font-weight: 400;
+  font-size: 2.8em;
+}
+
+.product-detail-description {
+  padding: 15px;
+  font-size: 1.8em;
+  line-height: 1.5;
+}
+
+.product-detail-price {
+  font-size: 5.5em;
+  margin: 10px 0;
+}
+
+.small {
+  font-size: 1.8em;
+  color: var(--green);
+}
+
+.small span {
+  text-decoration: line-through;
+}
+
+.actions-list {
+  margin-bottom: 50px;
+}
+
+.actions-list li {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  padding: 20px 0;
+}
+
+.actions-list i {
+  color: var(--green);
+  font-size: 2em;
+  margin-right: 15px;
+}
+
+.actions-list p {
+  color: var(--gray);
+  font-size: 1.7em;
+  margin: 0;
+}
+
+.buy-now-button {
+  background-color: var(--light-blue);
+  font-size: 1.6em;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+}
+
+.action-button {
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  margin-top: 15px;
+}
+
+.action-button.edit {
+  background-color: chocolate;
+}
+.action-button.delete {
+  background-color: rgb(248, 69, 37);
+}
+
+
+/*====== Formularios ======*/
+.form-label {
+  display: inline-block;
+  font-size: 1.6em;
+  margin: 10px 0;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  height: 45px;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  border-radius: 8px;
+  border: none;
+  border: solid 1px var(--gray);
+  padding: 0 15px;
+}
+
+textarea.form-input {
+  min-height: 140px;
+  resize: vertical;
+  padding: 15px;
+}
+
+
+
+/*====== Media-Queries ======*/
 @media (min-width: 768px) {
   .main-header_credit-link {
     margin-top: 0;
@@ -398,7 +432,7 @@ input {
     align-items: center;
     justify-content: space-between;
   }
-  
+
   .left-navbar a,
   .right-navbar a {
     border-bottom: none;
@@ -412,7 +446,7 @@ input {
   .left-navbar li {
     margin-right: 15px;
   }
-  
+
   .right-navbar li {
     margin-left: 15px;
   }

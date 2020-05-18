@@ -3,15 +3,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const methodOverride =  require('method-override');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var productsRouter = require('./routes/products');
 var detailRouter = require('./routes/details');
+var createRouter = require('./routes/create');
+var editRouter = require('./routes/edit');
+var deleteRouter = require('./routes/delete');
 
 var app = express();
 
 // view engine setup
-//app.set('controllers', path.join(__dirname, 'controllers'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -20,10 +24,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.get('/product/detail/:id/:category', detailRouter);
+app.get('/products', productsRouter);
+app.get('/products/create', createRouter);
+app.post('/products/create', createRouter);
+app.get('/products/edit/:id', editRouter);
+app.put('/products/update/:id', editRouter);
+app.delete('/products/delete/:id', deleteRouter);
+app.get('/products/detail/:id/:category', detailRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
